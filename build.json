@@ -1,0 +1,18 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "platforms/android/PowerDesignWHOIS.keystore",
+            "storePassword": "Lg.bqSs5SZnN#F8V",
+            "alias": "PowerDesignWHOIS",
+            "password" : "Lg.bqSs5SZnN#F8V",
+            "keystoreType": ""
+        },
+        "release": {
+            "keystore": "platforms/android/PowerDesignWHOIS.keystore",
+            "storePassword": "Lg.bqSs5SZnN#F8V",
+            "alias": "PowerDesignWHOIS",
+            "password" : "Lg.bqSs5SZnN#F8V",
+            "keystoreType": ""
+        }
+    }
+}

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="theme-color" content="#d1fae5">
+  <meta name="description" content="Check who the owner of a domain name is with this free WHOIS lookup tool.">
+  <meta http-equiv="Content-Security-Policy" content="connect-src 
+  https://whois-seeker.onrender.com
+    ws://127.0.0.1:5500/www/index.html/ws
+    https://powerdesign.com.ng
+    https://ssl.gstatic.com 
+    https://www.google-analytics.com;">
+
+  <meta name="msapplication-TileImage"
+    content="assets/PDTfav.png">
+
+  <meta name="msapplication-TileColor" content="#D1FAE5">
+
+  <link rel="icon"
+    href="assets/PDTfavsm.png"
+    sizes="32x32">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="tailwind.css">
+  <title>WHOIS Lookup | Free Domain Name Availability Tool - Power Design</title>
+</head>
+
+<body class="bg-gray-50 antialiased relative" onload="onLoad()">
+  
+    <div id="nav" class="h-auto w-0 fixed ml-0 pl-0 bg-white rounded-br-lg shadow-lg transit z-99">
+      <div id="headerbg" class="">
+          <div class="h-72 w-full flex justify-between shadow-sm">
+            <img id="logo" class="w-2/5 self-end m-2" src="assets/icon.png" alt="WHOIS Seeker" />
+            
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 m-4 self-start text-green-500" id="menu-close" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+      </div>
+      <div id="nav-items">
+         <a id="click-about" class="text-sm text-gray-900 p-0 m-0 hidden items-center transitsm" href="#"> <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 m-4 self-start text-green-500" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+        </svg>About</a>
+                <p id="about-text" class="text-sm text-gray-900 p-4 hidden">WHOIS Seeker is a free lookup tool for checking the owners of domain names. It was created by Power Design Technologies. Feel free to make suggestions to us via <a class="text-green-500" href="#" onclick="window.open('https://powerdesign.com.ng/int', '_system'); return false;">our website</a>.
+                </p>
+         <a id="close-app2" class="text-sm text-gray-900 p-0 m-0 hidden items-center transitsm" href="#"> <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 m-4 self-start text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+          </svg>Close App</a>
+      </div>
+
+    </div>
+    <header id="hero" class="bg-green-100 w-full">
+        <div id="menu-icons" class="absolute bg-transparent w-full flex justify-between">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 m-4 text-green-500" id="menu-reveal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 m-4 text-green-500" id="close-app1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+          </svg>
+        </div>
+        <div class="container px-12 py-6 h-screen flex flex-col mx-auto my-auto">
+          <div id="hero-content" class="flex flex-col items-center  my-auto">
+              <h1 class="text-gray-900 pb-10 text-lg md:text-3xl text-center">
+                Free WHOIS Lookup Tool
+              </h1>
+              <h2 class="pb-10 font-bold text-2xl xs:text-4xl text-center">
+                Check the owner of a domain name
+              </h2>
+              <form id="input-form" class="pb-10 flex">
+                  <input id="input-field" class="w-full p-4 outline-none rounded-l-lg" type="text" name="domaininput" placeholder="Enter a domain name" required>    
+                  <button id="getres" class="bg-green-500 text-white hover:bg-white hover:text-green-500 rounded-r-lg p-4 shadow-lg outline-none" type="submit">Search</button>
+              </form>
+              <div id="loader" class="hidden">
+                <div id="loader2" class="loading"></div>
+                <div class="px-4">Loading...</div>
+              </div>
+          </div>
+        </div>
+    </header>
+
+    <div id="main" class="container mx-auto static flex flex-col items-center hidden">
+        <div id="result-cont" style="display: none;" class="p-4 -mt-44 xs:-mt-20 bg-white rounded-lg shadow-lg w-4/5">
+          <h2 class="p-4 font-bold text-2xl md:text-4xl text-center">WHOIS search results
+          </h2>
+          <div id="result-div" class="text-gray-900 px-1 py-2 xs:px-2 text-lg break-words">
+          </div>
+        </div>
+    </div>
+    <div id="prefooter" class="w-full mt-16 p-4 bg-green-500 flex mx-auto justify-center content-center hidden">
+        <p class="text-white text-xl xs:text-2xl p-2" >Need a business website?</p>
+        <a href="#" onclick="window.open('https://powerdesign.com.ng/int', '_system'); return false;" class="bg-red-800 hover:bg-white text-white text-center hover:text-red-800 uppercase rounded-lg m-2 p-2 xs:font-bold text-xs xs:text-sm shadow-lg animate-bounce">click here</a>
+    </div>
+         
+  <script src="main.js"></script>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="swiped-events.js"></script>
+</body>
+
+</html>
